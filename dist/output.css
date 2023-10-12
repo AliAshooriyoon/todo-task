@@ -534,12 +534,48 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.bg-zinc-600 {
+.m-10 {
+  margin: 2.5rem;
+}
+
+.h-64 {
+  height: 16rem;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
+.bg-blue-600 {
   --tw-bg-opacity: 1;
-  background-color: rgb(82 82 91 / var(--tw-bg-opacity));
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
 
 .bg-zinc-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(63 63 70 / var(--tw-bg-opacity));
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
