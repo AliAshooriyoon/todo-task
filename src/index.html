@@ -4,22 +4,32 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+<!--    <link rel="stylesheet" href="style.css">-->
     <link rel="stylesheet" href="../dist/output.css">
     <title>Project40</title>
 </head>
 <body class="bg-zinc-900 text-white">
+<div class="popUp fixed left-0 right-0 mx-auto w-[40%] h-64 bg-sky-500 rounded-2xl text-center hidden">
+    <img src="../pictures/close_FILL0_wght400_GRAD0_opsz48.svg" alt="Close" id="closePopUp" class="absolute m-2 cursor-pointer right-0">
+    <label for="newTaskValue" class="block mt-10 text-4xl">Write Your Task
+    </label>
+    <br>
+    <input type="text" id="newTaskValue" class="mt-2 w-72 h-10 rounded-2xl outline-0 text-black indent-4 text-2xl">
+    <br>
+    <button type="button" id="taskValueBtn" class="mt-5 text-black border-zinc-950 border-2 w-36 h-14 rounded-2xl text-xl hover:bg-zinc-900 hover:text-white delay-150">Add Task</button>
+</div>
 <div class="container  w-[70%] h-[70vh] mx-auto mt-24">
     <div class="statuses w-full h-[70vh] flex flex-row ">
-        <div class="box1 bg-zinc-400 w-[25%] h-full rounded-bl-3xl rounded-tl-3xl">
+        <div class="box1 bg-zinc-400 w-[25%] h-full rounded-bl-3xl rounded-tl-3xl overflow-hidden">
           <div class="boxHeader bg-zinc-700 h-16 flex items-center justify-center rounded-tl-3xl">
               <h3 class="text-center text-4xl ">No Status</h3>
           </div>
+
         </div>
         <div class="box2 bg-zinc-200 w-[25%] h-full">
             <div class="boxHeader bg-red-500 h-16 flex items-center justify-center">
-            <h3 class="text-center text-4xl">Not Started</h3>
-                </div>
+                <h3 class="text-center text-4xl">Not Started</h3>
+            </div>
         </div>
         <div class="box3 bg-zinc-400 w-[25%] h-full">
             <div class="boxHeader bg-yellow-400 h-16 flex items-center justify-center">
@@ -39,3 +49,8 @@
 </body>
 <script src="script.js" defer></script>
 </html>
+
+
+<!--<div class="taskBox w-[75%] h-16 bg-sky-500 mx-auto mt-5 flex items-center justify-center rounded-xl">-->
+<!--    <p class="taskName text-2xl font-bold m-5 ">My first Task </p>-->
+<!--</div>-->
