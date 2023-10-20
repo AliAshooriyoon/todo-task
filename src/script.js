@@ -1,9 +1,9 @@
 // let TaskName = document.querySelector(".taskName");
 // let TaskBox = document.querySelector(".taskBox");
-let box1 = document.querySelector(".box1");
-let box2 = document.querySelector(".box2");
-let box3 = document.querySelector(".box3");
-let box4 = document.querySelector(".box4");
+let box1 = document.querySelector(".TaskBox1");
+let box2 = document.querySelector(".TaskBox2");
+let box3 = document.querySelector(".TaskBox3");
+let box4 = document.querySelector(".TaskBox4");
 let popUpPage = document.querySelector(".popUp");
 let addToDoBtn = document.getElementById("addToDo");
 let closePopUpBtn = document.getElementById("closePopUp");
@@ -12,6 +12,7 @@ let newTaskBtn = document.getElementById("taskValueBtn");
 let newToDo;
 let newToDoValue;
 let newToDoNumber = 0;
+let boxHeaders = document.querySelectorAll(".boxHeader");
 addToDoBtn.addEventListener("click", newTask);
 closePopUpBtn.addEventListener("click", closePopUp);
 document.addEventListener("keydown", closePopUpESC);
@@ -66,15 +67,24 @@ function addTaskEnter(event) {
       popUpPage.classList.add("hidden");
       taskValue.value = "";
       newToDo.addEventListener("dblclick", removeTask);
+      // newToDoValue.addEventListener("dblclick", removeTaskValue);
       newToDo.addEventListener("dragstart", dragStarted);
     }
   }
 }
 function removeTask(event) {
-  console.log(event.target);
-  event.target.remove();
+  if (event.target.id === `newToDo${newToDoNumber}`) {
+    console.log("true");
+    console.log(event.target);
+    event.target.remove();
+  } else {
+    event.target.parentElement.remove();
+  }
 }
-
+// function removeTaskValue(event) {
+//   console.log(`remove Parent ${event.target.parentElement}`);
+//   event.target.parentElement.p.remove();
+// }
 box1.addEventListener("dragover", offDragOver);
 box2.addEventListener("dragover", offDragOver);
 box3.addEventListener("dragover", offDragOver);
