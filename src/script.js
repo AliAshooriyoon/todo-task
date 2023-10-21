@@ -1,18 +1,24 @@
 // let TaskName = document.querySelector(".taskName");
 // let TaskBox = document.querySelector(".taskBox");
-let box1 = document.querySelector(".TaskBox1");
-let box2 = document.querySelector(".TaskBox2");
-let box3 = document.querySelector(".TaskBox3");
-let box4 = document.querySelector(".TaskBox4");
-let popUpPage = document.querySelector(".popUp");
-let addToDoBtn = document.getElementById("addToDo");
-let closePopUpBtn = document.getElementById("closePopUp");
+const box1 = document.querySelector(".TaskBox1");
+const box2 = document.querySelector(".TaskBox2");
+const box3 = document.querySelector(".TaskBox3");
+const box4 = document.querySelector(".TaskBox4");
+const popUpPage = document.querySelector(".popUp");
+const addToDoBtn = document.getElementById("addToDo");
+const closePopUpBtn = document.getElementById("closePopUp");
 let taskValue = document.getElementById("newTaskValue");
 let newTaskBtn = document.getElementById("taskValueBtn");
 let newToDo;
 let newToDoValue;
 let newToDoNumber = 0;
-let boxHeaders = document.querySelectorAll(".boxHeader");
+const boxHeaders = document.querySelectorAll(".boxHeader");
+let allBoxHeaders = {
+  boxHeader1: boxHeaders[0],
+  boxHeader2: boxHeaders[1],
+  boxHeader3: boxHeaders[2],
+  boxHeader4: boxHeaders[3],
+};
 addToDoBtn.addEventListener("click", newTask);
 closePopUpBtn.addEventListener("click", closePopUp);
 document.addEventListener("keydown", closePopUpESC);
@@ -41,7 +47,7 @@ function addTask() {
     newToDoValue.className = "askName text-2xl font-bold m-5";
     newToDoValue.innerHTML = taskValue.value;
     newToDo.className =
-      "taskBox w-[75%] h-16 bg-sky-500 mx-auto mt-5 flex items-center justify-center rounded-xl";
+      "taskBox w-[75%] h-16  mx-auto mt-5 flex items-center justify-center rounded-xl bg-zinc-700";
     newToDo.append(newToDoValue);
     box1.append(newToDo);
     popUpPage.classList.add("hidden");
@@ -61,7 +67,7 @@ function addTaskEnter(event) {
       newToDoValue.className = "askName text-2xl font-bold m-5";
       newToDoValue.innerHTML = taskValue.value;
       newToDo.className =
-        "taskBox w-[75%] h-16 bg-sky-500 mx-auto mt-5 flex items-center justify-center rounded-xl";
+        "taskBox w-[75%] h-16 mx-auto mt-5 flex items-center justify-center rounded-xl bg-zinc-700";
       newToDo.append(newToDoValue);
       box1.append(newToDo);
       popUpPage.classList.add("hidden");
@@ -100,7 +106,14 @@ function dropToDo(event) {
   let targetId = event.dataTransfer.getData("elementID");
   let targetElement = document.getElementById(targetId);
   event.target.append(targetElement);
+  console.log(targetElement.parentElement.parentElement.children[0]);
+  let targetStyle =
+    targetElement.parentElement.parentElement.children[0].classList[1];
+  targetElement.classList.remove(targetElement.classList[9]);
+  targetElement.classList.add(targetStyle);
 }
 function dragStarted(event) {
   event.dataTransfer.setData("elementID", event.target.id);
+
+  console.log(event.target.parentElement);
 }
